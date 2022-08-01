@@ -7,10 +7,10 @@ class Functions extends TestCase {
     public function testSuccessdisplayRecords()
     {
         //expected result of the test
-        $expected = '<div><h3>Cuthbert</h3><h4>99</h4><p>Pizza</p></div>';
+        $expected = '<div><h3>Cuthbert</h3><h4>Pizza</h4><p>7</p></div>';
         
         //input for the test to get the result
-        $testInput1 = [['record-name' => 'Cuthbert', 'artist-name' => 99, 'record-size' => 'Pizza']];
+        $testInput1 = [['artist-name' => 'Cuthbert', 'record-name' => 'Pizza', 'record-size' => 7]];
         //run the real function with the input
         $case = displayRecords($testInput1);
         //compare the expected result with the actual result
@@ -20,9 +20,9 @@ class Functions extends TestCase {
     public function testFailuredisplayRecords()
     {
         //expected result of the test
-        $expected = '<div><h3>Cuthbert</h3><h4></h4><p>Pizza</p></div>';
+        $expected = 'No Records';
         //input for the test to get the result
-        $testInput1 = [['record-name' => 'Cuthbert', 'artist-name' => '', 'record-size' => 'Pizza']];
+        $testInput1 = [];
         //run the real function with the input
         $case = displayRecords($testInput1);
         //compare the expected result with the actual result

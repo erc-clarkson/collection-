@@ -9,7 +9,7 @@ $query->execute();
 
 $data = $query->fetchAll();
 
-require "functions.php";
+require_once "functions.php";
 ?>
 
 <html>
