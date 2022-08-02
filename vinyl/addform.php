@@ -1,13 +1,5 @@
 <?php
 
-//link to database 
-//send information to hidden 
-// validation statement 
-// if true : 
-    // add to db 
-    //send to display page
-
-
 require_once "functions.php";
 
 $db = connectToDatabase(); 
