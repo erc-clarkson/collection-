@@ -49,3 +49,29 @@ function displayRecords(array $records): string {
     }
 } 
 
+function validatePost(array $input) {
+    if((!isset($input['artist-name']) || $input['artist-name'] === '')
+    || (!isset($input['record-name']) || $input['record-name'] === '')
+    || (!isset($input['record-size']) || $input['record-size'] === '')) 
+        { return false;
+    } return true; 
+}
+
+function redirect($input) {
+    if ($input === false){
+        header('Location: addform.php');
+    } else {
+        header('Location: display.php');
+    }
+} 
+
+function sendData($db, $getArtistName, $getRecordName, $getRecordSize) {
+    $query = $db->prepare("INSERT into `records` (`record-name`, `artist-name`, `record-size`) VALUES (:getRecordName, :getArtistName, :getRecordSize);");
+    $query->bindParam(':getArtistName', $getArtistName);
+    $query->bindParam(':getRecordName', $getRecordName);
+    $query->bindParam(':getRecordSize', $getRecordSize);
+    $query->execute();
+}
+
+?>
+
