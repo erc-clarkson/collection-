@@ -2,8 +2,8 @@
 
 require_once "functions.php";
 
-$db = connectTodatabase(); 
-$data = fetchAlldatabase($db);
+$db = connectToDatabase(); 
+$data = fetchAllDatabase($db);
 
 ?>
 
