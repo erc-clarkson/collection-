@@ -53,6 +53,17 @@ main section {
     border: 2px solid black;
 }
 
+/* form page */
+
+form div {
+    padding: 15px;
+}
+
+#submitButtom {
+    background-color: transparent;
+    font-size: 18px;
+    padding: 3px 8px;
+}
 
 @media screen and (max-width: 800px) {
     .records div {
@@ -74,6 +85,4 @@ main section {
     h4 {
         font-size: 16px;
     }
-
-
 }
