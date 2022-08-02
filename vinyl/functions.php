@@ -5,7 +5,7 @@
  * @param array 
  * @return array associative array = $db
  */
-function connectToDatabase(){
+function connectToDatabase(): PDO{
     $db = new PDO('mysql:host=db; dbname=Vinyl', 'root', 'password');
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     return $db; 
@@ -17,7 +17,7 @@ function connectToDatabase(){
  * @param array 
  * @return array = $data 
  */
-function fetchAllDatabase($db){
+function fetchAllDatabase($db): array{
     $query = $db->prepare("SELECT `record-name`, `artist-name`, `record-size` FROM `records`;");
     $query->execute();
     $data = $query->fetchAll();
