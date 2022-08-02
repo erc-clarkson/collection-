@@ -7,7 +7,7 @@ class Functions extends TestCase {
     public function testSuccessdisplayRecords()
     {
         //expected result of the test
-        $expected = '<div><section><h3>Cuthbert</h3><h4>Pizza</h4><p>7</p></section></div>';
+        $expected = '<div><section class ="recordsContent"><h3>Cuthbert</h3><h4>Pizza</h4><p>7</p></section></div>';
 
         //input for the test to get the result
         $testInput1 = [['artist-name' => 'Cuthbert', 'record-name' => 'Pizza', 'record-size' => 7]];
