@@ -48,7 +48,7 @@ class Functions extends TestCase {
         //input for the test to get the result
         $testInput1 = [['artist-name' => 'Amy Winehouse', 'record-name' => 'Back to Black', 'record-size' => '7 inch']];
         //run the real function with the input
-        $case = displayRecords($testInput1);
+        $case = validatePost($testInput1);
         //compare the expected result with the actual result
         $this->assertTrue($expected, $case);
     }
@@ -72,7 +72,7 @@ class Functions extends TestCase {
         // tell phpunit it should expect an error to be thrown
         $this->expectException(TypeError::class);
         //run the real function with the input
-        $case = displayRecords($testInput1);
+        $case = validatePost($testInput1);
         
     }
 
