@@ -18,7 +18,7 @@ function connectToDatabase(): PDO{
  * @return array = $data 
  */
 function fetchAllDatabase($db): array{
-    $query = $db->prepare("SELECT `record-name`, `artist-name`, `record-size` FROM `records` ORDER BY `artist-name` ASC;");
+    $query = $db->prepare("SELECT `id`, `record-name`, `artist-name`, `record-size` FROM `records` WHERE `delete` = 0 ORDER BY `artist-name` ASC;");
     $query->execute();
     $data = $query->fetchAll();
     return $data;
@@ -43,6 +43,10 @@ function displayRecords(array $records): string {
             '<h4>' . $record['record-name'] . '</h4>' . 
             '<p>' . $record['record-size'] . '</p>' . 
             '</section>' .
+            '<form action="hiddendelete.php" method="POST">' .
+            '<input type= "hidden" name="delete" value="' . $record['id'] . '"/>' .
+            '<button>delete</button>' .
+            '</form>' .
             '</div>';
         }
         return $result;
@@ -88,6 +92,18 @@ function sendData(PDO $db, string $getArtistName, string $getRecordName, string 
     $query->bindParam(':getArtistName', $getArtistName);
     $query->bindParam(':getRecordName', $getRecordName);
     $query->bindParam(':getRecordSize', $getRecordSize);
+    $query->execute();
+}
+
+/**
+ * Sending data to db from delete button 
+ *
+ * @param array $db & the input from the delete button 
+ * @return int returns int value to the delete field in db 
+ */
+function sendDelete(PDO $db, int $input) {
+    $query = $db->prepare("UPDATE `records` SET `delete` = 1 WHERE `id` = :id;");
+    $query->bindParam(':id', $input);
     $query->execute();
 }
 

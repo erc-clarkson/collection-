@@ -3,7 +3,6 @@
 require_once "functions.php";
 
 $db = connectToDatabase(); 
-$data = fetchAllDatabase($db);
 
 $submitedData = validatePost($_POST);
 
