@@ -18,7 +18,7 @@ function connectToDatabase(): PDO{
  * @return array = $data 
  */
 function fetchAllDatabase($db): array{
-    $query = $db->prepare("SELECT `record-name`, `artist-name`, `record-size` FROM `records`;");
+    $query = $db->prepare("SELECT `record-name`, `artist-name`, `record-size` FROM `records` ORDER BY `artist-name` ASC;");
     $query->execute();
     $data = $query->fetchAll();
     return $data;
@@ -70,7 +70,7 @@ function validatePost(array $input) {
  * @return void sends to different locations
  */
 function redirect($input) {
-    if ($input === false){
+    if (!$input){
         header('Location: addform.php');
     } else {
         header('Location: display.php');
@@ -83,7 +83,7 @@ function redirect($input) {
  * @param array $db & the variables from the form field
  * @return array into database. 
  */
-function sendData($db, $getArtistName, $getRecordName, $getRecordSize) {
+function sendData(PDO $db, string $getArtistName, string $getRecordName, string $getRecordSize) {
     $query = $db->prepare("INSERT into `records` (`record-name`, `artist-name`, `record-size`) VALUES (:getRecordName, :getArtistName, :getRecordSize);");
     $query->bindParam(':getArtistName', $getArtistName);
     $query->bindParam(':getRecordName', $getRecordName);

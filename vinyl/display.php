@@ -16,8 +16,8 @@ $data = fetchAllDatabase($db);
         <nav>
             <section>
                 <div>
-				    <a class="pageLinks" href="display.php">View</a>
-				    <a href="addform.php">Add</a>
+				<a class="pageLinks" href="display.php">View</a>
+				<a href="addform.php">Add</a>
 			    </div>
             </section>
         </nav>
