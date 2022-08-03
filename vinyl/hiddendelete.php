@@ -7,8 +7,8 @@ $data = fetchAllDatabase($db);
 
 $deleteVinyl = $_POST['delete'];
 
-
-
-sendDelete($db, $deleteVinyl);
+if (isset($_POST['delete'])) {
+    sendDelete($db, $deleteVinyl);
+  }
 
 header('Location: display.php');
