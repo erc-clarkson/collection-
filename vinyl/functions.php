@@ -78,7 +78,7 @@ function redirect($input) {
 } 
 
 /**
- * Inputting information to 
+ * Inputting information to db
  *
  * @param array $db & the variables from the form field
  * @return array into database. 
