@@ -91,5 +91,3 @@ function sendData($db, $getArtistName, $getRecordName, $getRecordSize) {
     $query->execute();
 }
 
-?>
-
