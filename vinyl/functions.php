@@ -49,3 +49,45 @@ function displayRecords(array $records): string {
     }
 } 
 
+/**
+ * Validate input from addform page 
+ *
+ * @param array $input
+ * @return bool False if the fields are left empty. 
+ */
+function validatePost(array $input) {
+    if((!isset($input['artist-name']) || $input['artist-name'] === '')
+    || (!isset($input['record-name']) || $input['record-name'] === '')
+    || (!isset($input['record-size']) || $input['record-size'] === '')) 
+        { return false;
+    } return true; 
+}
+
+/**
+ * if statement, redirect from the form page. 
+ *
+ * @param array $input
+ * @return void sends to different locations
+ */
+function redirect($input) {
+    if ($input === false){
+        header('Location: addform.php');
+    } else {
+        header('Location: display.php');
+    }
+} 
+
+/**
+ * Inputting information to db
+ *
+ * @param array $db & the variables from the form field
+ * @return array into database. 
+ */
+function sendData($db, $getArtistName, $getRecordName, $getRecordSize) {
+    $query = $db->prepare("INSERT into `records` (`record-name`, `artist-name`, `record-size`) VALUES (:getRecordName, :getArtistName, :getRecordSize);");
+    $query->bindParam(':getArtistName', $getArtistName);
+    $query->bindParam(':getRecordName', $getRecordName);
+    $query->bindParam(':getRecordSize', $getRecordSize);
+    $query->execute();
+}
+
