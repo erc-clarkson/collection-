@@ -102,8 +102,8 @@ function sendData(PDO $db, string $getArtistName, string $getRecordName, string 
  * @return int returns int value to the delete field in db 
  */
 function sendDelete(PDO $db, int $input) {
-$query = $db->prepare("UPDATE `records` SET `delete` = 1 WHERE `id` = :id;");
-$query->bindParam(':id', $input);
-$query->execute();
+    $query = $db->prepare("UPDATE `records` SET `delete` = 1 WHERE `id` = :id;");
+    $query->bindParam(':id', $input);
+    $query->execute();
 }
 
