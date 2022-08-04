@@ -11,4 +11,4 @@ if (isset($_POST['delete'])) {
     sendDelete($db, $deleteVinyl);
   }
 
-header('Location: display.php');
+header('Location: index.php');

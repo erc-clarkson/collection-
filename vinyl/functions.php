@@ -78,7 +78,7 @@ function redirect($input) {
     if (!$input){
         header('Location: addform.php');
     } else {
-        header('Location: display.php');
+        header('Location: index.php');
     }
 } 
 
