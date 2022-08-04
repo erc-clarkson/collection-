@@ -33,7 +33,7 @@ $oneRecord = array_splice($data, 0, 1);
         <main>
             <section class= "displayWidth">
                 <div class= "records">
-                <?php echo displayOneRecords($oneRecord);?>
+                <?php echo displayRecords($oneRecord);?>
                 </div>
                 <div class="next">
                     <a id = "nextbutton" href="shuffle.php">Next</a>

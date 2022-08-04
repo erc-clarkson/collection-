@@ -106,26 +106,3 @@ function sendDelete(PDO $db, int $input) {
     $query->bindParam(':id', $input);
     $query->execute();
 }
-
-function displayOneRecords(array $records): string {
-    if (count($records) == 0){
-        return 'No Records';
-    } else {
-        $result = '';
-        foreach($records as $record){
-            $result .= 
-            '<div>' .
-            '<section class ="recordsContent">' .
-            '<h3>' . $record['artist-name'] . '</h3>' .  
-            '<h4>' . $record['record-name'] . '</h4>' . 
-            '<p>' . $record['record-size'] . '</p>' . 
-            '</section>' .
-            '<form action="hiddendelete.php" method="POST">' .
-            '<input type= "hidden" name="delete" value="' . $record['id'] . '"/>' .
-            '<button>delete</button>' .
-            '</form>' .
-            '</div>';
-        }
-        return $result;
-    }
-} 
