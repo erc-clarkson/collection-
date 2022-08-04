@@ -50,7 +50,7 @@ $data = fetchAllDatabase($db);
                     <div>
                         <label for="images">Record Image</label>
                         <br>
-                        <input type='text' name='images' value="https://i.imgur.com/tIS8gME.jpg" />
+                        <input type='text' name='images' value="https://i.imgur.com/jF0WBef.jpg" />
                  
                         </select>
                     </div>

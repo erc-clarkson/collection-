@@ -84,7 +84,7 @@ main {
 }
 
 main img {
-    width: 320px;
+    width: 100%;
 }
 
 .records div {
@@ -130,10 +130,6 @@ form div {
     nav a {
         font-size: 14px;
         padding: 8px 15px;
-    }
-
-    main img {
-        width: 200px;
     }
 
 }
