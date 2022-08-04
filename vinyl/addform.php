@@ -40,7 +40,7 @@ $data = fetchAllDatabase($db);
                     <div>
                         <label for="record-size">Record Size</label>
                         <br>
-                        <select id="record size" name="record-size">
+                        <select id="record-size" name="record-size">
                         <option value="7 inch">7 inch</option>
                         <option value="10 inch">10 inch</option>
                         <option value="12 inch">12 inch</option>
@@ -50,10 +50,7 @@ $data = fetchAllDatabase($db);
                         <label for="images">Record Image</label>
                         <br>
                         <input type='text' name='images' value="https://i.imgur.com/jF0WBef.jpg" />
-                 
-                        </select>
                     </div>
-
                     <div>
                         <input id = "submitButtom" type='submit' />
                     </div>

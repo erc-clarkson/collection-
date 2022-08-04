@@ -4,9 +4,6 @@ require_once "functions.php";
 
 $db = connectToDatabase(); 
 $data = fetchAllDatabase($db);
-
-$count = count($data); 
-
 ?>
 
 <html>
