@@ -17,8 +17,8 @@ function connectToDatabase(): PDO{
  * @param array 
  * @return array = $data 
  */
-function fetchAllDatabase($db): array{
-    $query = $db->prepare("SELECT `id`, `record-name`, `artist-name`, `record-size` FROM `records` WHERE `delete` = 0 ORDER BY `artist-name` ASC;");
+function fetchAllDatabase(PDO $db): array{
+    $query = $db->prepare("SELECT `id`, `record-name`, `artist-name`, `record-size`, `images` FROM `records` WHERE `delete` = 0 ORDER BY `artist-name` ASC;");
     $query->execute();
     $data = $query->fetchAll();
     return $data;
@@ -39,6 +39,7 @@ function displayRecords(array $records): string {
             $result .= 
             '<div>' .
             '<section class ="recordsContent">' .
+            '<img src="' . $record['images'] . '"/>' . 
             '<h3>' . $record['artist-name'] . '</h3>' .  
             '<h4>' . $record['record-name'] . '</h4>' . 
             '<p>' . $record['record-size'] . '</p>' . 
@@ -77,7 +78,7 @@ function redirect($input) {
     if (!$input){
         header('Location: addform.php');
     } else {
-        header('Location: display.php');
+        header('Location: index.php');
     }
 } 
 
@@ -106,4 +107,3 @@ function sendDelete(PDO $db, int $input) {
     $query->bindParam(':id', $input);
     $query->execute();
 }
-
