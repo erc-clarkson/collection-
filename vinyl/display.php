@@ -18,8 +18,8 @@ $count = count($data);
         <nav>
             <section>
                 <div>
-				<a href="addform.php">Add</a>
-                <a href="shuffle.php">shuffle</a>
+			        <a href="addform.php">Add</a>
+                    <a href="shuffle.php">shuffle</a>
 			    </div>
             </section>
         </nav>

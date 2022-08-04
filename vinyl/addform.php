@@ -15,8 +15,8 @@ $data = fetchAllDatabase($db);
         <nav>
             <section>
                 <div class="nav">
-				<a href="display.php">View</a>
-                <a href="shuffle.php">shuffle</a>
+				    <a href="display.php">View</a>
+                    <a href="shuffle.php">shuffle</a>
 			    </div>
             </section>
         </nav>    
