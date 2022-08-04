@@ -19,9 +19,8 @@ $oneRecord = array_splice($data, 0, 1);
         <nav>
             <section>
                 <div class="nav">
-				    <a href="display.php">View</a>
-				    <a href="addform.php">Add</a>
-                    <!-- <a href="shuffle.php">shuffle</a> -->
+				<a href="display.php">View</a>
+				<a href="addform.php">Add</a>
 			    </div>
             </section>
         </nav>

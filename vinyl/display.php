@@ -18,7 +18,6 @@ $count = count($data);
         <nav>
             <section>
                 <div>
-				<!-- <a class="pageLinks" href="display.php">View</a> -->
 				<a href="addform.php">Add</a>
                 <a href="shuffle.php">shuffle</a>
 			    </div>

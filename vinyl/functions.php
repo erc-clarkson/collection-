@@ -17,7 +17,7 @@ function connectToDatabase(): PDO{
  * @param array 
  * @return array = $data 
  */
-function fetchAllDatabase($db): array{
+function fetchAllDatabase(PDO $db): array{
     $query = $db->prepare("SELECT `id`, `record-name`, `artist-name`, `record-size`, `images` FROM `records` WHERE `delete` = 0 ORDER BY `artist-name` ASC;");
     $query->execute();
     $data = $query->fetchAll();
