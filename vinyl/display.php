@@ -5,6 +5,8 @@ require_once "functions.php";
 $db = connectToDatabase(); 
 $data = fetchAllDatabase($db);
 
+$count = count($data); 
+
 ?>
 
 <html>
@@ -16,8 +18,8 @@ $data = fetchAllDatabase($db);
         <nav>
             <section>
                 <div>
-				<a class="pageLinks" href="display.php">View</a>
-				<a href="addform.php">Add</a>
+			        <a href="addform.php">Add</a>
+                    <a href="shuffle.php">shuffle</a>
 			    </div>
             </section>
         </nav>
@@ -26,8 +28,15 @@ $data = fetchAllDatabase($db);
                 <h1>Your Vinyls</h1> 
             </div>
         </section>
+        <section class= "sub">
+            <section  class= "displayWidth"> 
+                <div class= "count">
+                    <p>Total: <?php echo count($data);?></p>
+                </div>
+            </section> 
+        </section>
         <main>
-            <section>
+            <section class = "displayWidth">
             <div class= "records">
               <?php echo displayRecords($data);?>
               </section>
