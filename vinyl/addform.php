@@ -23,6 +23,7 @@ $data = fetchAllDatabase($db);
         <section class= "title">
                 <div>
                     <h1>Add Vinyls</h1> 
+                    <h2><?php echo $_GET['error'];?><h2>
                 </div>
             </section>
             <main>

@@ -7,10 +7,10 @@ class Functions extends TestCase {
     public function testSuccessdisplayRecords()
     {
         //expected result of the test
-        $expected = '<div><section class ="recordsContent"><h3>Cuthbert</h3><h4>Pizza</h4><p>7</p></section></div>';
+        $expected = '<div><section class ="recordsContent"><img src="www.image.com"/><h3>Cuthbert</h3><h4>Pizza</h4><p>7</p></section><form action="hiddendelete.php" method="POST"><input type= "hidden" name="delete" value="1"/><button>delete</button></form></div>';
 
         //input for the test to get the result
-        $testInput1 = [['artist-name' => 'Cuthbert', 'record-name' => 'Pizza', 'record-size' => 7]];
+        $testInput1 = [['images' => 'www.image.com', 'artist-name' => 'Cuthbert', 'record-name' => 'Pizza', 'record-size' => 7, 'id' => 1]];
         //run the real function with the input
         $case = displayRecords($testInput1);
         //compare the expected result with the actual result

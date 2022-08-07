@@ -63,7 +63,8 @@ function displayRecords(array $records): string {
 function validatePost(array $input) {
     if((!isset($input['artist-name']) || $input['artist-name'] === '')
     || (!isset($input['record-name']) || $input['record-name'] === '')
-    || (!isset($input['record-size']) || $input['record-size'] === '')) 
+    || (!isset($input['record-size']) || $input['record-size'] === '')
+    || (!isset($input['images']) || $input['images'] === '')) 
         { return false;
     } return true; 
 }
@@ -75,8 +76,8 @@ function validatePost(array $input) {
  * @return void sends to different locations
  */
 function redirect($input) {
-    if (!$input){
-        header('Location: addform.php');
+    if ($input == false){
+        header('Location: addform.php?error= All Fields Required');
     } else {
         header('Location: index.php');
     }
