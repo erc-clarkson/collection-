@@ -10,10 +10,10 @@ $db = connectToDatabase();
 
 $getArtistName = $_POST['artist-name'];
 $getRecordName = $_POST['record-name'];
-$getRecordSize = $_POST['record-size'];
+$getRecordType = $_POST['record-type'];
 $getRecordImage = $_POST['images'];
 
 
-sendData($db, $getArtistName, $getRecordName, $getRecordSize, $getRecordImage);
+sendData($db, $getArtistName, $getRecordName, $getRecordType, $getRecordImage);
 
 ?>

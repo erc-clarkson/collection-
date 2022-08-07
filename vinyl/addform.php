@@ -23,7 +23,6 @@ $data = fetchAllDatabase($db);
         <section class= "title">
                 <div>
                     <h1>Add Vinyls</h1> 
-                    <h2><?php echo $_GET['error'];?><h2>
                 </div>
             </section>
             <main>
@@ -39,21 +38,20 @@ $data = fetchAllDatabase($db);
                         <input type='text' name='record-name' />
                     </div>
                     <div>
-                        <label for="record-size">Record Size</label>
+                        <label for='record-type'>Record Type</label>
                         <br>
-                        <select id="record-size" name="record-size">
-                        <option value="7 inch">7 inch</option>
-                        <option value="10 inch">10 inch</option>
-                        <option value="12 inch">12 inch</option>
+                        <select id='record-type' name='record-type'>
+                        <option value="single">Single</option>
+                        <option value="album">Album</option>
                         </select>
                     </div>
                     <div>
-                        <label for="images">Record Image</label>
+                        <label for='images'>Record Image</label>
                         <br>
-                        <input type='text' name='images' value="https://i.imgur.com/jF0WBef.jpg" />
+                        <input type='text' name='images' value='https://i.imgur.com/jF0WBef.jpg' />
                     </div>
                     <div>
-                        <input id = "submitButtom" type='submit' />
+                        <input id = 'submitButtom' type='submit' />
                     </div>
                 </form>
             </main>
