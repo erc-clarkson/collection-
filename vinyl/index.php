@@ -22,7 +22,7 @@ $data = fetchAllDatabase($db);
         </nav>
         <section class= "title">
             <div>
-                <h1>Your Vinyls</h1> 
+                <h1>Your Vinyl</h1> 
             </div>
         </section>
         <section class= "sub">
