@@ -1,24 +1,29 @@
 <?php
 
-//link database to page 
-$db = new PDO('mysql:host=db; dbname=Vinyl', 'root', 'password');
-$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-
-$query = $db->prepare("SELECT `record-name`, `artist-name`, `record-size` FROM `records`;");
-$query->execute();
-
-$data = $query->fetchAll();
-
 require_once "functions.php";
+
+$db = connectToDatabase(); 
+$data = fetchAllDatabase($db);
+
 ?>
 
 <html>
-    <head></head>
+    <head>
+    <title>Vinyl Collection</title>
+	<link href="stylesheet.css" type="text/css" rel="stylesheet" />
+    </head>
     <body>
-        <section>
+        <section class= "title">
             <div>
-              <?php echo displayRecords($data); ?>
+                <h1>Your Vinyls</h1> 
             </div>
         </section>
+        <main>
+            <section>
+            <div class= "records">
+              <?php echo displayRecords($data);?>
+              </section>
+            </div>
+        </main>
     </body>
 </html>
