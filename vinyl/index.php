@@ -6,7 +6,7 @@ $db = connectToDatabase();
 $data = fetchAllDatabase($db);
 ?>
 
-<html>
+<html  lang="en-gb">
     <head>
         <title>Vinyl Collection</title>
 	<link href="stylesheet.css" type="text/css" rel="stylesheet" />
