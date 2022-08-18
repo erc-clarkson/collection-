@@ -6,7 +6,7 @@ $db = connectToDatabase();
 $data = fetchAllDatabase($db);
 ?>
 
-<html>
+<html  lang="en-gb">
     <head>
         <title>Vinyl Collection</title>
 	<link href="stylesheet.css" type="text/css" rel="stylesheet" />
@@ -22,7 +22,7 @@ $data = fetchAllDatabase($db);
         </nav>
         <section class= "title">
             <div>
-                <h1>Your Vinyls</h1> 
+                <h1>Your Vinyl</h1> 
             </div>
         </section>
         <section class= "sub">

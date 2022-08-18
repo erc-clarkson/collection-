@@ -26,7 +26,7 @@ $oneRecord = array_splice($data, 0, 1);
         </nav>
         <section class= "title">
             <div>
-                <h1>shuffle Vinyls</h1> 
+                <h1>shuffle Vinyl</h1> 
             </div>
         </section>
         <main>

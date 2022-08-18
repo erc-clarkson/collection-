@@ -18,7 +18,7 @@ function connectToDatabase(): PDO{
  * @return array = $data 
  */
 function fetchAllDatabase(PDO $db): array{
-    $query = $db->prepare("SELECT `id`, `record-name`, `artist-name`, `record-size`, `images` FROM `records` WHERE `delete` = 0 ORDER BY `artist-name` ASC;");
+    $query = $db->prepare("SELECT `id`, `record-name`, `artist-name`, `record-type`, `images` FROM `records` WHERE `delete` = 0 ORDER BY `artist-name` ASC;");
     $query->execute();
     $data = $query->fetchAll();
     return $data;
@@ -40,9 +40,9 @@ function displayRecords(array $records): string {
             '<div>' .
             '<section class ="recordsContent">' .
             '<img src="' . $record['images'] . '"/>' . 
-            '<h3>' . $record['artist-name'] . '</h3>' .  
-            '<h4>' . $record['record-name'] . '</h4>' . 
-            '<p>' . $record['record-size'] . '</p>' . 
+            '<h3>' . ucfirst($record['artist-name']) . '</h3>' .  
+            '<h4>' . ucfirst($record['record-name']) . '</h4>' . 
+            '<p>' . ucfirst($record['record-type']) . '</p>' . 
             '</section>' .
             '<form action="hiddendelete.php" method="POST">' .
             '<input type= "hidden" name="delete" value="' . $record['id'] . '"/>' .
@@ -63,7 +63,8 @@ function displayRecords(array $records): string {
 function validatePost(array $input) {
     if((!isset($input['artist-name']) || $input['artist-name'] === '')
     || (!isset($input['record-name']) || $input['record-name'] === '')
-    || (!isset($input['record-size']) || $input['record-size'] === '')) 
+    || (!isset($input['record-type']) || $input['record-type'] === '')
+    || (!isset($input['images']) || $input['images'] === '')) 
         { return false;
     } return true; 
 }
@@ -75,7 +76,7 @@ function validatePost(array $input) {
  * @return void sends to different locations
  */
 function redirect($input) {
-    if (!$input){
+    if ($input == false){
         header('Location: addform.php');
     } else {
         header('Location: index.php');
@@ -89,10 +90,10 @@ function redirect($input) {
  * @return array into database. 
  */
 function sendData(PDO $db, string $getArtistName, string $getRecordName, string $getRecordSize) {
-    $query = $db->prepare("INSERT into `records` (`record-name`, `artist-name`, `record-size`) VALUES (:getRecordName, :getArtistName, :getRecordSize);");
+    $query = $db->prepare("INSERT into `records` (`record-name`, `artist-name`, `record-type`) VALUES (:getRecordName, :getArtistName, :getRecordType);");
     $query->bindParam(':getArtistName', $getArtistName);
     $query->bindParam(':getRecordName', $getRecordName);
-    $query->bindParam(':getRecordSize', $getRecordSize);
+    $query->bindParam(':getRecordType', $getRecordSize);
     $query->execute();
 }
 
