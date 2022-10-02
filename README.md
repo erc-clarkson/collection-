@@ -1,7 +1,7 @@
 # Collection App 
 
 ### Description
-The collection app is a PHP project that fetches and displays information about a collection of information tied to a theme  from a MySQL database. 
+The collection app is a PHP project that fetches and displays a collection of information tied to a theme from a MySQL database. 
 
 The collection of information was tied to the theme of vinyl records. Additional features include the ability to add vinyl records to the database and a shuffle button was incorporated to display one record (selected at random).
 
