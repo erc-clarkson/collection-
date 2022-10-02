@@ -17,13 +17,13 @@ The collection of information was tied to the theme of vinyl records. Additional
 ### Installing
 Clone this repo:
 ```
-git@github.com:iO-Academy/
+git@github.com:erc-clarkson/collection-.git
 ```
+
 Install the database `/Vinyl_2022-08-04.sql ` into a db named ` Vinyl`
-Ensure your local database host, username and password details are correct in:
-```
-vinyl/functions.php
-```
+
+Ensure your local database host, username and password details are correct in:`vinyl/functions.php`
+
 The application will now be available wherever you access it
 
 ### Authors
