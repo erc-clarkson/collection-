@@ -20,7 +20,7 @@ Clone this repo:
 git@github.com:erc-clarkson/collection-.git
 ```
 
-Install the database `/Vinyl_2022-08-04.sql ` into a db named ` Vinyl`
+Install the database `/Vinyl_2022-08-04.sql ` into a database named ` Vinyl`
 
 Ensure your local database host, username and password details are correct in:`vinyl/functions.php`
 
